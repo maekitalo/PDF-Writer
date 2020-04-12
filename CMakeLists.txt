@@ -10,7 +10,7 @@ endif(CMAKE_GENERATOR STREQUAL "Xcode")
 if(NOT USE_BUNDLED)
     FIND_PACKAGE(PkgConfig)
 
-    find_package (JPEG)
+    PKG_CHECK_MODULES(JPEG jpeg)
     if (NOT JPEG_FOUND)
         set (PDFHUMMUS_NO_DCT TRUE)
     endif (NOT JPEG_FOUND)
